@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 bg-neutral-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <SectionHeader number="02 //" title="Selected Works" />
+        <SectionHeader number="02 //" title="Projets Sélectionnés" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(300px,auto)]">
           {PROJECTS.map((project, index) => {

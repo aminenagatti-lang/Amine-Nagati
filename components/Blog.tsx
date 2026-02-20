@@ -11,7 +11,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
   return (
     <section id="blog" className="py-24 bg-neutral-100 dark:bg-neutral-900/30 transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <SectionHeader number="03 //" title="Intelligence Logs" />
+        <SectionHeader number="03 //" title="Logs d'Intelligence" />
 
         <div className="flex flex-col">
           {BLOG_POSTS.map((post) => (

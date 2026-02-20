@@ -6,7 +6,7 @@ const Expertise: React.FC = () => {
   return (
     <section id="expertise" className="py-24 bg-neutral-100 dark:bg-neutral-900/30 transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <SectionHeader number="01 //" title="Technical Architecture" />
+        <SectionHeader number="01 //" title="Architecture Technique" />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {EXPERTISE.map((item, index) => (

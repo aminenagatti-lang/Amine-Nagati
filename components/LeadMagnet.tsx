@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { LEADS_WEBHOOK_URL } from '../constants';
-import { useLanguage } from '../context/LanguageContext';
 
 const LeadMagnet: React.FC = () => {
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,16 +68,16 @@ const LeadMagnet: React.FC = () => {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1">
               <span className="font-mono text-[#cc5500] text-xs uppercase tracking-widest mb-4 block">
-                {t.leadMagnet.stayConnected}
+                Restez Connecté
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 dark:text-white mb-4">
-                {t.leadMagnet.joinNetwork}
+                Rejoignez le Réseau d'Intelligence
               </h2>
               <p className="font-mono text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">
-                {t.leadMagnet.description}
+                Laissez votre email et les détails de votre entreprise. Je vous informerai des analyses techniques approfondies, des outils d'automatisation et des disponibilités de consulting.
               </p>
               <div className="font-mono text-xs text-neutral-500 dark:text-neutral-600">
-                {t.leadMagnet.joinCount}
+                // Rejoignez 500+ ingénieurs & fondateurs
               </div>
             </div>
 
@@ -87,22 +85,22 @@ const LeadMagnet: React.FC = () => {
                {submitted ? (
                  <div className="h-full flex items-center justify-center p-8 bg-[#cc5500]/10 border border-[#cc5500] animate-in fade-in duration-500">
                     <p className="font-mono text-[#cc5500] text-center">
-                      <span className="text-xl block mb-2">{t.leadMagnet.detailsRecorded}</span>
-                      {t.leadMagnet.addedToDatabase}
+                      <span className="text-xl block mb-2">DÉTAILS ENREGISTRÉS</span>
+                      Vous avez été ajouté à la base de données.
                     </p>
                  </div>
                ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div className="relative group">
                     <label htmlFor="email" className="font-mono text-xs text-neutral-500 uppercase mb-2 block group-focus-within:text-[#cc5500]">
-                      {t.leadMagnet.businessEmail}
+                      Email Professionnel
                     </label>
                     <input 
                       type="email" 
                       id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="name@company.com"
+                      placeholder="nom@entreprise.com"
                       className="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-mono py-2 focus:outline-none focus:border-[#cc5500] transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-800"
                       required
                       disabled={isSubmitting}
@@ -111,7 +109,7 @@ const LeadMagnet: React.FC = () => {
                   
                   <div className="relative group">
                      <label htmlFor="company" className="font-mono text-xs text-neutral-500 uppercase mb-2 block group-focus-within:text-[#cc5500]">
-                      {t.leadMagnet.companyName}
+                      Entreprise
                     </label>
                     <input 
                       type="text" 
@@ -130,7 +128,7 @@ const LeadMagnet: React.FC = () => {
                     disabled={isSubmitting}
                     className="mt-4 self-start text-neutral-900 dark:text-white font-mono uppercase text-sm tracking-wider border-b border-[#cc5500] pb-1 hover:text-[#cc5500] dark:hover:text-[#cc5500] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
-                    {isSubmitting ? t.leadMagnet.processing : t.leadMagnet.requestAccess}
+                    {isSubmitting ? 'Traitement...' : 'Soumettre les Détails →'}
                   </button>
                 </form>
                )}

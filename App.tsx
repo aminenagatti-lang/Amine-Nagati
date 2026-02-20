@@ -68,21 +68,21 @@ const App: React.FC = () => {
                 onClick={(e) => scrollToSection(e, 'projects')}
                 className="hover:text-black dark:hover:text-white transition-colors cursor-pointer"
               >
-                PROJECTS
+                PROJETS
               </a>
               <a 
                 href="#expertise" 
                 onClick={(e) => scrollToSection(e, 'expertise')}
                 className="hover:text-black dark:hover:text-white transition-colors cursor-pointer"
               >
-                STACK
+                EXPERTISE
               </a>
               <a 
                 href="#blog" 
                 onClick={(e) => scrollToSection(e, 'blog')}
                 className="hover:text-black dark:hover:text-white transition-colors cursor-pointer"
               >
-                BLOGS
+                BLOG
               </a>
             </div>
 
@@ -139,21 +139,21 @@ const App: React.FC = () => {
                 onClick={(e) => scrollToSection(e, 'projects')}
                 className="font-serif text-3xl text-neutral-900 dark:text-white hover:text-[#cc5500]"
               >
-                PROJECTS
+                PROJETS
               </a>
               <a 
                 href="#expertise" 
                 onClick={(e) => scrollToSection(e, 'expertise')}
                 className="font-serif text-3xl text-neutral-900 dark:text-white hover:text-[#cc5500]"
               >
-                STACK
+                EXPERTISE
               </a>
               <a 
                 href="#blog" 
                 onClick={(e) => scrollToSection(e, 'blog')}
                 className="font-serif text-3xl text-neutral-900 dark:text-white hover:text-[#cc5500]"
               >
-                BLOGS
+                BLOG
               </a>
               <a 
                 href="#lead-magnet" 

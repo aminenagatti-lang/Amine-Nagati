@@ -22,18 +22,18 @@ const Hero: React.FC = () => {
 
         <div className="max-w-2xl mt-12">
           <p className="font-mono text-neutral-600 dark:text-neutral-400 text-lg md:text-xl leading-relaxed border-l-2 border-[#cc5500] pl-6">
-            I transform complex manual processes into intelligent, autonomous systems. Expert in AI engineering and workflow automation.
+            Je transforme des processus manuels complexes en systèmes intelligents et autonomes. Expert en ingénierie IA et automatisation de workflows.
           </p>
         </div>
 
         <div className="mt-24 flex flex-col md:flex-row gap-12 text-sm font-mono text-neutral-500 uppercase tracking-wider">
            <div>
-              <span className="block text-neutral-900 dark:text-white mb-1">Role</span>
-              AI & Automation Engineer
+              <span className="block text-neutral-900 dark:text-white mb-1">Rôle</span>
+              Ingénieur IA & Automatisation
            </div>
            <div>
               <span className="block text-neutral-900 dark:text-white mb-1">Base</span>
-              Available Remote / Worldwide
+              Disponible en Remote / Monde entier
            </div>
            <div>
               <span className="block text-neutral-900 dark:text-white mb-1">Stack</span>
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll Indicator */}
       <a href="#expertise" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-[#cc5500] transition-colors">Scroll</span>
+        <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-[#cc5500] transition-colors">Défiler</span>
         <div className="w-[1px] h-12 bg-neutral-300 dark:bg-neutral-800 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-1/2 bg-[#cc5500] animate-[drop_1.5s_infinite]"></div>
         </div>
