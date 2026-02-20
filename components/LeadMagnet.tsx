@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { LEADS_WEBHOOK_URL } from '../constants';
+import { useLanguage } from '../context/LanguageContext';
 
 const LeadMagnet: React.FC = () => {
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,16 +70,16 @@ const LeadMagnet: React.FC = () => {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1">
               <span className="font-mono text-[#cc5500] text-xs uppercase tracking-widest mb-4 block">
-                Stay Connected
+                {t.leadMagnet.stayConnected}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 dark:text-white mb-4">
-                Join the Intelligence Network
+                {t.leadMagnet.joinNetwork}
               </h2>
               <p className="font-mono text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">
-                Leave your email and company details. I will notify you about technical deep-dives, automation tools, and consulting availability.
+                {t.leadMagnet.description}
               </p>
               <div className="font-mono text-xs text-neutral-500 dark:text-neutral-600">
-                // Join 500+ engineers & founders
+                {t.leadMagnet.joinCount}
               </div>
             </div>
 
@@ -85,15 +87,15 @@ const LeadMagnet: React.FC = () => {
                {submitted ? (
                  <div className="h-full flex items-center justify-center p-8 bg-[#cc5500]/10 border border-[#cc5500] animate-in fade-in duration-500">
                     <p className="font-mono text-[#cc5500] text-center">
-                      <span className="text-xl block mb-2">DETAILS RECORDED</span>
-                      You have been added to the database.
+                      <span className="text-xl block mb-2">{t.leadMagnet.detailsRecorded}</span>
+                      {t.leadMagnet.addedToDatabase}
                     </p>
                  </div>
                ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div className="relative group">
                     <label htmlFor="email" className="font-mono text-xs text-neutral-500 uppercase mb-2 block group-focus-within:text-[#cc5500]">
-                      Business Email
+                      {t.leadMagnet.businessEmail}
                     </label>
                     <input 
                       type="email" 
@@ -109,7 +111,7 @@ const LeadMagnet: React.FC = () => {
                   
                   <div className="relative group">
                      <label htmlFor="company" className="font-mono text-xs text-neutral-500 uppercase mb-2 block group-focus-within:text-[#cc5500]">
-                      Company
+                      {t.leadMagnet.companyName}
                     </label>
                     <input 
                       type="text" 
@@ -128,7 +130,7 @@ const LeadMagnet: React.FC = () => {
                     disabled={isSubmitting}
                     className="mt-4 self-start text-neutral-900 dark:text-white font-mono uppercase text-sm tracking-wider border-b border-[#cc5500] pb-1 hover:text-[#cc5500] dark:hover:text-[#cc5500] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
-                    {isSubmitting ? 'Processing...' : 'Submit Details →'}
+                    {isSubmitting ? t.leadMagnet.processing : t.leadMagnet.requestAccess}
                   </button>
                 </form>
                )}

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BlogPost } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface BlogPostModalProps {
   post: BlogPost | null;
@@ -7,6 +8,8 @@ interface BlogPostModalProps {
 }
 
 const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (post) {
       document.body.style.overflow = 'hidden';
@@ -71,7 +74,7 @@ const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) => {
             onClick={onClose}
             className="font-mono text-xs uppercase tracking-widest text-[#cc5500] hover:underline cursor-pointer"
           >
-            Close Terminal
+            {t.blog.closeTerminal}
           </button>
         </div>
       </div>
